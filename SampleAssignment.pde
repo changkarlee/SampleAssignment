@@ -1,16 +1,40 @@
-
 void setup()
 {
-  size(200,100);
+  size(500,500);
 }
+
+int x = 50;
+int y = 200;
+int a = 350;
+int b = 500;
+
 void draw()
 {
-  fill(255,255,0);
-  ellipse(100,50,80,80);
-  arc(100,50,60,60,PI/8,7*PI/8);
-  fill(0,0,0);
-  ellipse(85,40,10,15);
-  ellipse(115,40,10,15);
+  background(34, 58, 66);
+  
+  if (x<500)
+  {
+   circle(x, y);
+    x = x + 1;
+    y = y + 1;
+  }
+  if  (x > 450)
+    {
+     backwardsCircle(a, b);
+     a = a -6;
+     b = b -6;
+    }
+  }
+
+
+void circle(int x, int y)
+{
+  ellipse(x, y, 50, 50);
+  ellipse(y, x, 50, 50);
 }
 
-
+void backwardsCircle(int a, int b)
+{
+  ellipse(a,b,50,50);
+  ellipse(b,a,50,50);
+}
